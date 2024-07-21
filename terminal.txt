@@ -1,0 +1,10 @@
+ls // for listing items on terminal
+ls -a // list all, including hidden files
+cd // change directory
+start . // open all in file explorer
+pwd // print working direcotry 
+cd .. // go to parent directory of current directory
+touch something.txt // create file
+mkdir project // make directory named project 
+rm something.txt // remove file, permanent delete*
+rm -rf project // remove remove folder named project 
