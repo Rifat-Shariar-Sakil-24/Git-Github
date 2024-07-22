@@ -210,12 +210,62 @@ git config --global init.defaultbranch 'default_branch_name'
 ```
 `remember default branch name of current directory is already fixed while we ran` `git init` `command`
 
+<br>
+check all current branches:
+
+```aidl
+git branch
+```
+output : `master` as right now we've only one branch
 <br> 
+<br>
+
 new branch create:
 
 ```aidl
-git branch branch_name
+git branch <new-branch-name>
 ```
+now if we run:
+```aidl
+git branch
+```
+we'll see: <br>
+`<new-branch>` <br>
+`*master`
+
+<br>
+
+switch to new branch:
+```aidl
+git switch <new-branch>
+```
+or 
+```aidl
+git checkout <new-branch>
+```
+<br>
+
+
+branch create and switch in oneline:
+```aidl
+git switch -c <branch-name>
+```
+or 
+```aidl
+git checkout -b <branch-name>
+```
+<br>
+
+Use the `-v` flag with `git branch` to view more
+information about each branch:
+```aidl
+git branch -v
+```
+<br>
+
+`Remember` `The new branch will inherit all the commits from the branch it was created from` 
+<br>
+<br>
 
 // Branch Merging
 $ git branch
