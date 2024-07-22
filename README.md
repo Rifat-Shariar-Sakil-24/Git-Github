@@ -116,7 +116,7 @@ git add filename.txt
 ```
 <br>
 
-multiple file Stage:
+multiple file stage:
 ```aidl
 git add filename1.txt filename2.txt
 ```
@@ -208,7 +208,7 @@ you can change default branch from git next initialization for all directories:
 ```aidl
 git config --global init.defaultbranch 'default_branch_name'
 ```
-`remember default branch name of current directory is already fixed while we ran` `git init` `command`
+`remember default branch name of current directory is already fixed when we initialized git`
 
 <br>
 check all current branches:
@@ -263,9 +263,15 @@ git branch -v
 ```
 <br>
 
-`Remember` `The new branch will inherit all the commits from the branch it was created from` 
+`Remember:` <br> 
+`1. The new branch will inherit all the commits history from the branch it was created from as those commits were done in this new branch` 
 <br>
+`2. Suppose two branch have same file. If we update the file in one branch, without committing or stashing the changes, you can't switch to another branch.
+but you can switch to another branch if the files are non-conflicting. But the non-conflicting file
+will follow you to the switched branch.`
+
 <br>
+
 
 // Branch Merging
 $ git branch
