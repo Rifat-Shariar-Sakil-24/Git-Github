@@ -106,8 +106,11 @@ git status
 ```
 <br>
 
+`You can't commit without staging files`
+<br>
+<br>
 now,
-single file stage:
+staging single file:
 ```aidl
 git add filename.txt
 ```
@@ -130,6 +133,8 @@ now, again check status of all files:
 ```aidl
 git status
 ```
+
+
 <br>
 commit staged changes:
 
@@ -144,6 +149,7 @@ git commit -a -m 'commit message'
 ```
 <br>
 
+
 check git commit log:
 ```aidl
 git log
@@ -152,7 +158,32 @@ or git log in oneline:
 ```aidl
 git log --oneline
 ```
+<br>
+modify last commit:
 
+```aidl
+git commit --amend
+```
+`This will open your code editor and there you can update the commit message`
+<br>
+<br>
+
+To add more files to the last commit:
+```aidl
+git add forgottenFile.txt
+git commit --amend
+```
+
+
+<br>
+
+unstage file(:3) :
+```aidl
+git rm --cached index.txt
+```
+
+
+`modify => stage => commit  |=> sleep :V`
 <hr>
 
 <br>
@@ -192,13 +223,13 @@ $ git log
 or (for oneline git log history)
 // git log --oneline
 
-you can't commit without staging files
+
 
 // for unstage
 $ git rm --cached index.txt
 
 
-modify => stage => commit  |=> sleep
+
 
 
 //update last commit for forgotten file
