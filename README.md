@@ -177,7 +177,7 @@ git commit --amend
 
 <br>
 
-unstage file(:3) :
+unstage file:
 ```aidl
 git rm --cached index.txt
 ```
@@ -186,61 +186,36 @@ git rm --cached index.txt
 `modify => stage => commit  |=> sleep :V`
 <hr>
 
+
+# Branch
+![screenshot](images/9.png)
+![screenshot](images/10.png)
+
 <br>
-<br>
 
+`In git, we are always working on a branch` <br>
+`The default branch name is master` <br>
+`Technically default branch is` `main` or `master` <br>
 
-$ git init
+check default branch:
+```aidl
+git config --global init.defaultbranch
+```
 
+output: `main` or `master` <br> <br>
 
-// start with git
-$ touch index.txt
+you can change default branch from git next initialization for all directories:
+```aidl
+git config --global init.defaultbranch 'default_branch_name'
+```
+`remember default branch name of current directory is already fixed while we ran` `git init` `command`
 
-modify index file
+<br> 
+new branch create:
 
-// check status
-$ git status
-
-
-//start staging
-$ git add index.txt
-or (add all files to staging area)
-$ git add --all
-
-
-// start commit
-$ git commit -m "commitMessage"
-
-
-
-// add and commit in oneline
-$ git commit -am "commitMessage"
-
-
-
-// check git log
-$ git log
-or (for oneline git log history)
-// git log --oneline
-
-
-
-// for unstage
-$ git rm --cached index.txt
-
-
-
-
-
-//update last commit for forgotten file
-
-$ git commit -m "someCommit"
-$ git add forgotttenFile.txt
-$ git commit --amend
-now the editor will open up, and I'll update the commit message if needed and close the file
-
-
-
+```aidl
+git branch branch_name
+```
 
 // Branch Merging
 $ git branch
