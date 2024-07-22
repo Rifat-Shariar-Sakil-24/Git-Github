@@ -272,6 +272,31 @@ will follow you to the switched branch.`
 
 <br>
 
+## Branch Merging
+
+![screenshot](images/11.png)
+
+Imagine, we've only one branch, which is the default one, `main` branch. <br>
+Let's say, it has two commits. Now let's create another branch by: `git branch shariar` <br> 
+Let's move to `shariar` branch, and make one or few commits. <br>
+We want to merge this `shariar` branch with `main` branch. <br>
+So go back to `main` branch by: `git switch main` <br>
+
+Now, merge `shariar` from `main` branch by:
+```aidl
+git merge shariar
+```
+`This is called fast forward merging`
+
+
+
+<br>
+
+
+Remember: <br>
+`1. We merge branches, not specific commits` <br>
+`2. We always merge to the current HEAD branch
+` <br>
 
 // Branch Merging
 $ git branch
