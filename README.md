@@ -355,4 +355,38 @@ or
 ```aidl
 git diff --cached
 ```
-   
+<br>
+
+specfific file difference `between working tree and the last commit `:
+
+```aidl
+git diff HEAD [filename]
+```
+
+
+<br>
+
+specfific file difference `between staging area and the last commit`:
+
+```aidl
+git diff --staged [filename]
+```
+<br>
+
+comparing branches:
+```aidl
+git diff branch1..branch2
+```
+
+<br>
+
+comparing commits:
+```aidl
+git diff commit1..commit2
+```
+
+
+<hr>
+
+
+
