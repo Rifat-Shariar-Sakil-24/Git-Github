@@ -263,6 +263,12 @@ git branch -v
 ```
 <br>
 
+use the `-d` flag to delete a branch
+```aidl
+git branch -d <branch-name>
+```
+<br>
+
 `Remember:` <br> 
 `1. The new branch will inherit all the commits history from the branch it was created from as those commits were done in this new branch` 
 <br>
@@ -287,16 +293,36 @@ Now, merge `shariar` from `main` branch by:
 git merge shariar
 ```
 `This is called fast forward merging`
-
-
+<br>
+`*Not all merges are fast forwards`
 
 <br>
 
+what if we add a new commit on `main` or `master` branch `like below` and then try to merge?
+
+![screenshot](images/12.png) <br> <br> <br>
+
+we'll end up like `below`, right? 
+
+![screenshot](images/13.png) <br> <br> <br>
+
+
+we'll, there's the `catch!`
+
+![screenshot](images/14.png)
+
+
+To sum up, let's say `master` branch and the `BugFix` branch have `non-conflicting` files.
+Then the git will `automatically` merge the two branches. But when the two branches have `con-flicting file changes` 
+`merge conflict` will happen while merging, then we've to `manually` `accept incoming changes or decline changes from the editor`
+
+<br>
 
 Remember: <br>
 `1. We merge branches, not specific commits` <br>
-`2. We always merge to the current HEAD branch
-` <br>
+`2. We always merge to the current HEAD branch`<br>
+
+
 
 // Branch Merging
 $ git branch
