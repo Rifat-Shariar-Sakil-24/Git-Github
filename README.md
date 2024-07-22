@@ -12,6 +12,10 @@ or if the command is unrecognized then for windows, you've to install git from
 
 
 ## Git Configuration 
+You can view all of your settings and where they are coming from using:
+```aidl
+git config --list --show-origin
+```
 ### For Global Setup
 ```aidl
 git config --global user.name 'your_username'
@@ -23,7 +27,8 @@ git config --global user.email 'your_email'
 
 
 <br>
-For Local Folder Setup 
+
+### Or For Local Folder Setup (Better Skip) 
 
 ```aidl
 git config --local user.name 'your_username'
@@ -47,14 +52,35 @@ you'll see something like below:
 `user.name=Rifat Shariar Sakil`   // `my username`<br>
 `user.email=shariarsakil101@gmail.com` // `my email`<br> 
 `core.editor=code --wait` // `default code editor VS Code was set` <br>
-`init.defaultbranch=main`  // `default starting branch` `$main` `is chosen`<br>
+`init.defaultbranch=master`  // `default starting branch` <br>
 <br>
 or, for local git configuation run: 
 
 ```aidl
 git config --local --list
 ```
+<br>
+
+
+### Default branch name
+By default Git will create a branch called `master` when you create a new repository with git init.
+From `Git version 2.28` onwards, you can set a different name for the initial branch.
+To set main as the default branch name do:
+```aidl
+git config --global init.defaultBranch main
+```
+
+<br>
+
+### Default Code Editor
+```aidl
+
+```
+
+
 <hr>
+<br>
+
 
 
 
@@ -74,11 +100,25 @@ git status
 ```
 output: `fatal: not a git repository (or any of the parent directories): .git` <br>
 
+
 Now, Initialize Git:
 ```aidl
 git init
 ```
+
+<br>
+
+Use `git status -s` or `git status --short` for far more simplified output
+```aidl
+git status -s
+```
+or 
+```aidl
+git  status --short
+```
 <hr>
+
+
 
 
 <br>
