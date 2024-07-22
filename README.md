@@ -322,22 +322,37 @@ Remember: <br>
 `1. We merge branches, not specific commits` <br>
 `2. We always merge to the current HEAD branch`<br>
 
+<br>
 
 
-// Branch Merging
-$ git branch
-$ git branch experiment
+## Git Diff
+![screenshot](images/15.png) 
+<br>
+<br>
+<br>
+`git diff` lists all the
+changes in your working directory that are NOT
+staged for the next commit. Basically `working tree vs staging area`
+```aidl
+git diff
+```
+<br>
 
-$ git switch experiment
+`git diff HEAD` lists all changes in the working tree since your last commit. Basically `working tree vs commit`
+
+```aidl
+git diff HEAD
+```
+
+<br>
+
+`git diff --staged` or `git diff --cached` lists all changes between the staging area and the last commit:
+Basically `staging area vs commit`
+```aidl
+git diff --staged
+```
 or
-$ git checkout experiment
-
-
-$ git switch -c experiment
-
-$ git branch -v
-
-// suppose you updated an existing file. without committing, you can't switch to another branch.
-but you can switch to another branch if you add a non conflicting file. But the nonconflicting file
-will follow you to the switched branch. 
+```aidl
+git diff --cached
+```
    
