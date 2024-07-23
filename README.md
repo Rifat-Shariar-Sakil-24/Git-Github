@@ -428,5 +428,100 @@ git diff commit1..commit2
 
 <hr>
 
+<br>
 
+## Git Stashing
+![screenshot](images/16.png)
+
+Imagine I'm on `master` branch, I make a `new branch`, `switch to it`. Then I do some `new work`
+but I don't make any `commit`. <br>
+Now what if I try to switch to the `master` branch? <br>
+`Two Things may happen`: <br>
+`1. Changes in the new branch will come along with me in master branch` <br>
+`2. Git won't allow me to leave the new branch for potential conflicts` <br>
+
+So for number 1, is there any way to prevent the flow? <br>
+Or for number 2, we `must commit right`? `Not really!` 
+
+`Git provides an easy way of stashing these
+uncommitted changes so that we can return to them
+later, without having to make unnecessary commits.` This is `Stashing` <br>
+`Again Stashing prevents changes to get driven into other branches while switching branches`
+<br>
+<br>
+
+`git stash` is super useful command that helps you `save
+changes that you are not yet ready to commit.` `You can
+stash changes and then come back to them later`.
+<br>
+
+Running `git stash` will take all uncommitted changes
+(staged and unstaged) and stash them, reverting the
+changes in your working copy.
+
+<br>
+
+
+`Command`:
+```aidl
+git stash
+```
+
+<br>
+
+Use `git stash pop` to re-apply your changes that you've stashed:
+
+```aidl
+git stash pop
+```
+<br>
+
+If you have `untracked files` (that you have never checked in to Git), they will not be included in the stash. <br>
+Fortunately, you can use the `-u` option to tell git stash to include those untracked files.
+```aidl
+git stash -u
+```
+
+<br>
+
+Multiple stashing is allowed <br>
+`git stash` // do some stuff<br> 
+`git stash` // do some stuff <br>
+`git stash` <br>
+`...`
+
+<br>
+
+run `git stash list` to view all stashes:
+```aidl
+git stash list
+```
+output: <br>
+`stash@{0}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
+`stash@{1}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
+`stash@{2}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
+
+<br>
+
+Git assumes you want to apply the most recent stash when you run `git stash apply` <br>
+but you can also specigy a particular stash like `git stash apply stash@{2}`
+```aidl
+git stash apply stash@{2}
+```
+
+<br>
+
+
+Drop a particular stash by `git stash drop <stash-id>`:
+```aidl
+git stash drop stash@{2}
+```
+
+<br>
+
+Clear the stash:
+```aidl
+git stash clear
+```
+<hr>
 
