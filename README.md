@@ -533,3 +533,50 @@ git stash clear
 ```
 <hr>
 
+<br>
+
+## Time Travelling
+we can go to different commits using `checkout`
+<br>
+
+Let's get the `commit log`:
+```aidl
+git log --oneline
+```
+you'll see something like this: <br>
+`8751ae5 (HEAD -> main) completed git stash sector` <br>
+`632889d git stash sector included` <br>
+`6ff6f3b updated some things on get init` <br>
+`9c73fa7 completed git diff sector` <br>
+`88889e9 git diff updated` <br>
+`...`  
+
+Let's time travel to the previous commit, `1 commit behind of the HEAD` which is `632889d git stash sector included` <br>
+```aidl
+git checkout 632889d
+```
+or 
+```aidl
+git checkout HEAD~1
+```
+
+`BOOM!` you'll see the things on your `code editor` you've added on this commit <br>
+you can create a branch from this commit, do other stuff as well. `Fun right?`
+<br>
+
+
+Go back to the HEAD position of the branch: <br>
+```aidl
+git checkout <branch-name>
+```
+or
+```aidl
+git checkout -c
+```
+
+<br>
+
+
+
+## Undoing Things 
+
