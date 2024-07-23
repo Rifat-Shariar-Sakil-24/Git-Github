@@ -573,10 +573,35 @@ or
 ```aidl
 git checkout -c
 ```
+<hr>
+
 
 <br>
 
+## Undoing Things
+
+### Rollback to the last commit, un-modify current working file. <br>
+`git checkout HEAD <file>`: <br>
+```aidl
+git checkout HEAD bug.js
+```
+or, `git checkout -- <file>`: <br>
+```aidl
+git checkout -- bug.js
+```
+or `git restore <file>`:
+```aidl
+git restore bug.js
+```
+or `git restore --source HEAD~<index> <file>` <br>
+
+```aidl
+git restore --source HEAD~0 bug.js
+```
+`bug.js` file will roll back to the last commit, clearing the recent changes on the file.
 
 
-## Undoing Things 
+*using `git restore --source HEAD~<index> <file>` allows us to rollback to different committed file versions.   
 
+
+<br>
