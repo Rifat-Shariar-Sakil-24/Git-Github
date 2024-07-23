@@ -503,6 +503,14 @@ output: <br>
 
 <br>
 
+Apply stashed changes from a different branch:
+```aidl
+git stash apply
+```
+
+<br>
+
+
 Git assumes you want to apply the most recent stash when you run `git stash apply` <br>
 but you can also specigy a particular stash like `git stash apply stash@{2}`
 ```aidl
