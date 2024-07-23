@@ -605,3 +605,48 @@ git restore --source HEAD~0 bug.js
 
 
 <br>
+
+
+### Unstage file
+to unstage a file use `git restore --stage <file>` <br>
+
+```aidl
+git restore --staged bug.js
+```
+
+
+### Commit Remove
+let's say we run `git log --oneline` and we get: 
+
+`8751ae5 ...`  // 5th or last commit (mistaken commit) <br>
+`632889d ...`  // 4th commit (mistaken commit)<br>
+`6ff6f3b ...` // 3rd commit<br>
+`9c73fa7 ...`  // 2nd commit <br>
+`88889e9 ...` // 1st commit <br>
+
+now we realize the `5th` and `4th` commits was unnecessary or should've been in different branch. <br> 
+We want to rollback to 3rd commit deleting 4th and 5th commit log history. <br>
+
+We'll run `git reset <commit-hash>`. Here `for 3rd commit (6ff6f3b)`:
+```aidl
+git reset 6ff6f3b
+```
+or `git reset --hard <commit-hash>`
+```aidl
+git reset --hard 6ff6f3b
+```
+`remember` `hard reset` will make the current directory just as the resetted commit <br>
+But the `normal reset` won't take away the changes you've committed as the mistaken commits. 
+
+
+`What if we don't want to delete the git log history but jump into 3rd commit?` <br>
+Use `git revert <commit-hash-of-start-of-mistaken-commit`. <br>
+Here: `git revert 4thcommithash` which is `632889d`
+```aidl
+git revert 632889d
+```
+`This will make a whole new commit of the 3rd commit and the 4th and 5th commit log won't be deleted`
+
+So the `big question` is:
+![screenshot](images/17.png)
+<hr>
