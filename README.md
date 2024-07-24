@@ -601,7 +601,7 @@ git restore --source HEAD~0 bug.js
 `bug.js` file will roll back to the last commit, clearing the recent changes on the file.
 
 
-*using `git restore --source HEAD~<index> <file>` allows us to rollback to different committed file versions.   
+*using `git restore --source HEAD~<index> <file>` allows us to rollback to different committed file versions without going to that commit 
 
 
 <br>
@@ -649,4 +649,100 @@ git revert 632889d
 
 So the `big question` is:
 ![screenshot](images/17.png)
+<hr>
+
+
+<br>
+<br>
+
+# Github
+### Github repo clone: 
+```aidl
+git clone <repo-url>
+```
+`make sure there's no git initialized in the target folder using ` `git status`
+
+<br>
+
+### Github Setup SSH Config
+Follow the given link: <a> https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh </a>
+
+### Local Repo Push
+
+Before we can push anything up to Github, we need to tell
+Git about our `remote repository` on Github. <br>
+We need to setup a `destination` to push up to. <br>
+In Git, we refer to these `destinations` as `remotes`. <br>
+`Each remote is simply a URL where a hosted repository lives.` <br>
+
+To view any existing remotes for you repository, we can run
+`git remote` or `git remote -v` (verbose, for more info) <br>
+This just displays a list of remotes. If you haven't added
+any remotes yet, you won't see anything! <br>
+
+
+### Steps: 
+
+`1. Create a repository on Github` <br>
+
+`2. Initialize git in your local folder`     <br>
+```aidl
+git init
+```
+`3. add your github repo link as remote to git` <br>
+```aidl
+git remote add <remote-name> <github-repo-link>
+```
+eg: `git remote add origin http...` <br>
+so when we write `origin`, means `that url named by origin will be hit`. <br>
+`So we can actually add multiple repo link as different remote names`
+
+`4. add some work, stage it and commit it`  <br> 
+```aidl
+touch something.txt
+git add something.txt
+git commit -m "first commit"
+```
+`5. push work into github repo:` <br>
+```aidl
+git push <remote-name> <branch-name> 
+```
+eg:`git push origin master`
+
+
+<br>
+
+
+
+Origin is a conventional Git remote name, but it is not at
+all special. It's just a name for a URL. <br>
+When we clone a Github repo, the `default remote name
+setup for us is called origin`. You can change it. Most
+people leave it.
+
+### Push Local Branch Data to Different Name Remote Branch:
+```aidl
+git push origin <local-branch-name>:<remote-branch-name>
+```
+
+### git remote name rename:
+```aidl
+git remote rename <old-name> <new-name>
+``` 
+<br>
+
+### git remote name remove:
+```aidl
+git remote remove <remote-name>
+```
+<br>
+
+### upstream:
+```aidl
+git push -u origin master
+git push origin
+```
+So this will map the `local master branch to the remote master branch`. <br>
+And git push will be enough to push anything after the mapping has been done.
+
 <hr>
