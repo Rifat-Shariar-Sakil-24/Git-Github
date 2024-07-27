@@ -824,4 +824,32 @@ Now, run `git branch` and see:
     *food
 These are the local branches now. 
 
+<hr>
+
+# Fetching and Pulling
+![screenshot](images/20.png)
+
+Git fetching will retrieve the changes from the remote repository to local repository but won't affect the working directory. Basically the remote branches in local folder will be updated
+
 <br>
+
+Fetch:
+```aidl
+git fetch <remote>
+```
+Fetch by <brach-name>:
+```aidl
+git fetch <remote> <branch-name>
+```
+
+<br>
+
+Git fetching will retrieve the changes from the remote repository to local repository as well as the working directory.
+<br>
+So `git pull = git fetch + git merge`
+
+git pull:
+```aidl
+git pull <remote> <branch-name>
+```
+`git pull can result into merge conflicts`
