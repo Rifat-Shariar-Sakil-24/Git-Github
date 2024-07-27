@@ -764,7 +764,7 @@ git branch -r
 ```
 `remember:` <br>
 `master` of local repo `origin/master` is `not same` <br>
-`HEAD` of `origin/master` means the last commit you've pulled from Github Repo. While the `HEAD` of `master` is the current commit of your local direcotry.
+`HEAD` of `origin/master` means the last commit you've pulled from Github Repo or pushed. While the `HEAD` of `master` is the current commit of your local direcotry.
 ![screenshot](images/18.png)
 ![screenshot](images/19.png)
 
@@ -775,3 +775,53 @@ so now, when I run `git status:`, I see: <br>
     (use "git push" to publish your local commits)
 
     nothing to commit, working tree clean
+now if I run `git branch -r`, I can see:
+
+    origin/HEAD -> origin/master
+    origin/master
+
+`origin/HEAD is my working master branch` <br>
+`origin/master is the remote master branch`
+now, let's say I run `git checkout origin/master`, I'll be taken back to master branch of the github. Which is 1 commit behind of my current master branch. 
+
+Now,
+```aidl
+git add --all
+git commit -m "something comitted"
+git push origin master
+```
+
+now both `local master` branch and `remtoe master` branch reference will be same again. 
+<br>
+
+
+### Create copy of remote branches 
+let's say I run `git branch -r` and I get this:
+
+    origin/HEAD -> origin/master  // this is local master branch
+    origin/master                 // this is remote master branch
+    origin/food                   // this is remote food branch
+
+But if I run `git branch`, I see only:
+
+    master
+
+now I want a local copy of good branch. 
+For this use `git switch <remote-branch-name` or `git checkout --track origin/<remote-branch-name>`
+
+```aidl
+git switch food
+```
+or
+```aidl
+git checkout --track origin/food
+```
+This will automatically create a local copy of remote food branch and switch to it. 
+
+Now, run `git branch` and see:
+
+    master
+    *food
+These are the local branches now. 
+
+<br>
