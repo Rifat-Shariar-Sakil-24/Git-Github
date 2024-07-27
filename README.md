@@ -45,14 +45,15 @@ git config --global --list
 ```
 you'll see something like below:
 <br>
-`filter.lfs.smudge=git-lfs smudge -- %f`<br>
-`filter.lfs.process=git-lfs filter-process` <br>
-`filter.lfs.required=true` <br>
-`filter.lfs.clean=git-lfs clean -- %f`  <br>
-`user.name=Rifat Shariar Sakil`   // `my username`<br>
-`user.email=shariarsakil101@gmail.com` // `my email`<br> 
-`core.editor=code --wait` // `default code editor VS Code was set` <br>
-`init.defaultbranch=master`  // `default starting branch` <br>
+
+    filter.lfs.smudge=git-lfs smudge -- %f`
+    filter.lfs.process=git-lfs filter-process` 
+    filter.lfs.required=true` 
+    filter.lfs.clean=git-lfs clean -- %f`  
+    user.name=Rifat Shariar Sakil`   // `my username`
+    user.email=shariarsakil101@gmail.com` // `my email`
+    core.editor=code --wait` // `default code editor VS Code was set` 
+    init.defaultbranch=master`  // `default starting branch` 
 <br>
 or, for local git configuation run: 
 
@@ -98,8 +99,12 @@ make sure no git is already initialized:
 ```aidl
 git status
 ```
-output: `fatal: not a git repository (or any of the parent directories): .git` <br>
+output: 
 
+    fatal: not a git repository (or any of the parent directories): .git 
+
+
+<br>
 
 Now, Initialize Git:
 ```aidl
@@ -269,9 +274,10 @@ now if we run:
 ```aidl
 git branch
 ```
-we'll see: <br>
-`<new-branch>` <br>
-`*master`
+we'll see:
+
+    <new-branch> 
+    *master
 
 <br>
 
@@ -496,10 +502,11 @@ run `git stash list` to view all stashes:
 ```aidl
 git stash list
 ```
-output: <br>
-`stash@{0}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
-`stash@{1}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
-`stash@{2}: WIP on main: e7e5773 vule gesi ki niye kaj korsi` <br>
+output: 
+
+    stash@{0}: WIP on main: e7e5773 vule gesi ki niye kaj korsi
+    stash@{1}: WIP on main: e7e5773 vule gesi ki niye kaj korsi
+    stash@{2}: WIP on main: e7e5773 vule gesi ki niye kaj korsi
 
 <br>
 
@@ -544,12 +551,15 @@ Let's get the `commit log`:
 git log --oneline
 ```
 you'll see something like this: <br>
-`8751ae5 (HEAD -> main) completed git stash sector` <br>
-`632889d git stash sector included` <br>
-`6ff6f3b updated some things on get init` <br>
-`9c73fa7 completed git diff sector` <br>
-`88889e9 git diff updated` <br>
-`...`  
+
+    8751ae5 (HEAD -> main) completed git stash sector
+    632889d git stash sector included
+    6ff6f3b updated some things on get init
+    9c73fa7 completed git diff sector
+    88889e9 git diff updated 
+    ... 
+
+<br>
 
 Let's time travel to the previous commit, `1 commit behind of the HEAD` which is `632889d git stash sector included` <br>
 ```aidl
@@ -618,11 +628,11 @@ git restore --staged bug.js
 ### Commit Remove
 let's say we run `git log --oneline` and we get: 
 
-`8751ae5 ...`  // 5th or last commit (mistaken commit) <br>
-`632889d ...`  // 4th commit (mistaken commit)<br>
-`6ff6f3b ...` // 3rd commit<br>
-`9c73fa7 ...`  // 2nd commit <br>
-`88889e9 ...` // 1st commit <br>
+    8751ae5 ...  // 5th or last commit (mistaken commit) 
+    632889d ...  // 4th commit (mistaken commit)
+    6ff6f3b ... // 3rd commit
+    9c73fa7 ...  // 2nd commit 
+    88889e9 ... // 1st commit 
 
 now we realize the `5th` and `4th` commits was unnecessary or should've been in different branch. <br> 
 We want to rollback to 3rd commit deleting 4th and 5th commit log history. <br>
@@ -746,3 +756,22 @@ So this will map the `local master branch to the remote master branch`. <br>
 And git push will be enough to push anything after the mapping has been done.
 
 <hr>
+
+# Pulling & Fetching
+see all remote branches and local branches:
+```aidl
+git branch -r
+```
+`remember:` <br>
+`master` of local repo `origin/master` is `not same` <br>
+`HEAD` of `origin/master` means the last commit you've pulled from Github Repo. While the `HEAD` of `master` is the current commit of your local direcotry.
+![screenshot](images/18.png)
+![screenshot](images/19.png)
+
+so now, when I run `git status:`, I see: <br>
+
+    On branch master
+    Your branch is ahead of 'origin/master' by 1 commit.
+    (use "git push" to publish your local commits)
+
+    nothing to commit, working tree clean
