@@ -7,4 +7,7 @@ cd .. // go to parent directory of current directory
 touch something.txt // create file
 mkdir project // make directory named project 
 rm something.txt // remove file, permanent delete*
-rm -rf project // remove remove folder named project 
+rm -rf project // remove remove folder named project
+
+cp /path/to/source/file /path/to/destination/   // copy file from one directory and to another
+cp /path/file /path/newfileName // copy file from one directory and to another and rename
