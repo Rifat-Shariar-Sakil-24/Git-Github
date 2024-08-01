@@ -13,14 +13,14 @@ or if the command is unrecognized then for windows, you've to install git from
 
 ## Git Configuration 
 You can view all of your settings and where they are coming from using:
-```aidl
+```sh
 git config --list --show-origin
 ```
 ### For Global Setup
-```
+```sh
 git config --global user.name 'your_username'
 ```
-```aidl
+```sh
 git config --global user.email 'your_email'
 ```
 
