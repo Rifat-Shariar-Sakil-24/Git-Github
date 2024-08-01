@@ -30,17 +30,17 @@ git config --global user.email 'your_email'
 
 ### Or For Local Folder Setup (Better Skip) 
 
-```aidl
+```sh
 git config --local user.name 'your_username'
 ```
-```aidl
+```sh
 git config --local user.email 'your_email'
 ```
 <br>
 <br>
 Now, to check global git configuration, run:
 
-```aidl
+```sh
 git config --global --list
 ```
 you'll see something like below:
@@ -57,7 +57,7 @@ you'll see something like below:
 <br>
 or, for local git configuation run: 
 
-```aidl
+```sh
 git config --local --list
 ```
 <br>
@@ -67,14 +67,14 @@ git config --local --list
 By default Git will create a branch called `master` when you create a new repository with git init.
 From `Git version 2.28` onwards, you can set a different name for the initial branch.
 To set main as the default branch name do:
-```aidl
+```sh
 git config --global init.defaultBranch main
 ```
 
 <br>
 
 ### Default Code Editor
-```aidl
+```sh
 
 ```
 
@@ -96,7 +96,7 @@ git config --global init.defaultBranch main
 `navigate to your directory` 
 <br> <br>
 make sure no git is already initialized:
-```aidl
+```sh
 git status
 ```
 output: 
@@ -107,18 +107,18 @@ output:
 <br>
 
 Now, Initialize Git:
-```aidl
+```sh
 git init
 ```
 
 <br>
 
 Use `git status -s` or `git status --short` for far more simplified output
-```aidl
+```sh
 git status -s
 ```
 or 
-```aidl
+```sh
 git  status --short
 ```
 <hr>
@@ -146,7 +146,7 @@ Basically:
 `modify file` => `stage changes` => `commit changes`<br>
 <br>
 check for modifications to be staged:
-```aidl
+```sh
 git status
 ```
 <br>
@@ -156,26 +156,26 @@ git status
 <br>
 now,
 staging single file:
-```aidl
+```sh
 git add filename.txt
 ```
 <br>
 
 multiple file stage:
-```aidl
+```sh
 git add filename1.txt filename2.txt
 ```
 
 <br>
 
 stage all changes at once:
-```aidl
+```sh
 git add --all
 ```
 <br>
 
 now, again check status of all files:
-```aidl
+```sh
 git status
 ```
 
@@ -183,30 +183,30 @@ git status
 <br>
 commit staged changes:
 
-```aidl
+```sh
 git commit -m 'commit message' 
 ```
 <br>
 
 git stage and commit in one-line:
-```aidl
+```sh
 git commit -a -m 'commit message'
 ```
 <br>
 
 
 check git commit log:
-```aidl
+```sh
 git log
 ```
 or git log in oneline:
-```aidl
+```sh 
 git log --oneline
 ```
 <br>
 modify last commit:
 
-```aidl
+```sh    
 git commit --amend
 ```
 `This will open your code editor and there you can update the commit message`
@@ -214,7 +214,7 @@ git commit --amend
 <br>
 
 To add more files to the last commit:
-```aidl
+```sh 
 git add forgottenFile.txt
 git commit --amend
 ```
@@ -223,7 +223,7 @@ git commit --amend
 <br>
 
 unstage file:
-```aidl
+```sh   
 git rm --cached index.txt
 ```
 
@@ -243,14 +243,14 @@ git rm --cached index.txt
 `Technically default branch is` `main` or `master` <br>
 
 check default branch:
-```aidl
+```sh 
 git config --global init.defaultbranch
 ```
 
 output: `main` or `master` <br> <br>
 
 you can change default branch from git next initialization for all directories:
-```aidl
+```sh   
 git config --global init.defaultbranch 'default_branch_name'
 ```
 `remember default branch name of current directory is already fixed when we initialized git`
@@ -258,7 +258,7 @@ git config --global init.defaultbranch 'default_branch_name'
 <br>
 check all current branches:
 
-```aidl
+```sh    
 git branch
 ```
 output : `master` as right now we've only one branch
@@ -267,11 +267,11 @@ output : `master` as right now we've only one branch
 
 new branch create:
 
-```aidl
+```sh    
 git branch <new-branch-name>
 ```
 now if we run:
-```aidl
+```sh    
 git branch
 ```
 we'll see:
@@ -282,35 +282,35 @@ we'll see:
 <br>
 
 switch to new branch:
-```aidl
+```sh    
 git switch <new-branch>
 ```
 or 
-```aidl
+```sh    
 git checkout <new-branch>
 ```
 <br>
 
 
 branch create and switch in oneline:
-```aidl
+```sh    
 git switch -c <branch-name>
 ```
 or 
-```aidl
+```sh    
 git checkout -b <branch-name>
 ```
 <br>
 
 Use the `-v` flag with `git branch` to view more
 information about each branch:
-```aidl
+```sh    
 git branch -v
 ```
 <br>
 
 use the `-d` flag to delete a branch
-```aidl
+```sh    
 git branch -d <branch-name>
 ```
 <br>
@@ -335,7 +335,7 @@ We want to merge this `shariar` branch with `main` branch. <br>
 So go back to `main` branch by: `git switch main` <br>
 
 Now, merge `shariar` from `main` branch by:
-```aidl
+```sh    
 git merge shariar
 ```
 `This is called fast forward merging`
@@ -379,55 +379,55 @@ Remember: <br>
 `git diff` lists all the
 changes in your working directory that are NOT
 staged for the next commit. Basically `working tree vs staging area`
-```aidl
+```sh    
 git diff
 ```
 <br>
 
 `git diff HEAD` lists all changes in the working tree since your last commit. Basically `working tree vs commit`
 
-```aidl
+```sh 
 git diff HEAD
 ```
-
+  
 <br>
 
 `git diff --staged` or `git diff --cached` lists all changes between the staging area and the last commit:
 Basically `staging area vs commit`
-```aidl
+```sh    
 git diff --staged
 ```
 or
-```aidl
+```sh    
 git diff --cached
 ```
 <br>
 
 specfific file difference `between working tree and the last commit `:
 
-```aidl
+```sh 
 git diff HEAD [filename]
 ```
 
-
+    
 <br>
 
 specfific file difference `between staging area and the last commit`:
 
-```aidl
+```sh     
 git diff --staged [filename]
 ```
 <br>
 
 comparing branches:
-```aidl
+```sh    
 git diff branch1..branch2
 ```
 
 <br>
 
 comparing commits:
-```aidl
+```sh    
 git diff commit1..commit2
 ```
 
@@ -469,7 +469,7 @@ changes in your working copy.
 
 
 `Command`:
-```aidl
+```sh     
 git stash
 ```
 
@@ -477,14 +477,14 @@ git stash
 
 Use `git stash pop` to re-apply your changes that you've stashed:
 
-```aidl
+```sh    
 git stash pop
 ```
 <br>
 
 If you have `untracked files` (that you have never checked in to Git), they will not be included in the stash. <br>
 Fortunately, you can use the `-u` option to tell git stash to include those untracked files.
-```aidl
+```sh    
 git stash -u
 ```
 
@@ -499,7 +499,7 @@ Multiple stashing is allowed <br>
 <br>
 
 run `git stash list` to view all stashes:
-```aidl
+```sh     
 git stash list
 ```
 output: 
@@ -511,7 +511,7 @@ output:
 <br>
 
 Apply stashed changes from a different branch:
-```aidl
+```sh    
 git stash apply
 ```
 
@@ -520,7 +520,7 @@ git stash apply
 
 Git assumes you want to apply the most recent stash when you run `git stash apply` <br>
 but you can also specigy a particular stash like `git stash apply stash@{2}`
-```aidl
+```sh    
 git stash apply stash@{2}
 ```
 
@@ -528,14 +528,14 @@ git stash apply stash@{2}
 
 
 Drop a particular stash by `git stash drop <stash-id>`:
-```aidl
+```sh    
 git stash drop stash@{2}
 ```
 
 <br>
 
 Clear the stash:
-```aidl
+```sh    
 git stash clear
 ```
 <hr>
@@ -547,7 +547,7 @@ we can go to different commits using `checkout`
 <br>
 
 Let's get the `commit log`:
-```aidl
+```sh    
 git log --oneline
 ```
 you'll see something like this: <br>
@@ -562,11 +562,11 @@ you'll see something like this: <br>
 <br>
 
 Let's time travel to the previous commit, `1 commit behind of the HEAD` which is `632889d git stash sector included` <br>
-```aidl
+```sh     
 git checkout 632889d
 ```
 or 
-```aidl
+```sh    
 git checkout HEAD~1
 ```
 
@@ -576,11 +576,11 @@ you can create a branch from this commit, do other stuff as well. `Fun right?`
 
 
 Go back to the HEAD position of the branch: <br>
-```aidl
+```sh   
 git checkout <branch-name>
 ```
 or
-```aidl
+```sh    
 git checkout -c
 ```
 <hr>
@@ -592,20 +592,20 @@ git checkout -c
 
 ### Rollback to the last commit, un-modify current working file. <br>
 `git checkout HEAD <file>`: <br>
-```aidl
+```sh    
 git checkout HEAD bug.js
 ```
 or, `git checkout -- <file>`: <br>
-```aidl
+```sh    
 git checkout -- bug.js
 ```
 or `git restore <file>`:
-```aidl
+```sh    
 git restore bug.js
 ```
 or `git restore --source HEAD~<index> <file>` <br>
 
-```aidl
+```sh   
 git restore --source HEAD~0 bug.js
 ```
 `bug.js` file will roll back to the last commit, clearing the recent changes on the file.
@@ -620,7 +620,7 @@ git restore --source HEAD~0 bug.js
 ### Unstage file
 to unstage a file use `git restore --stage <file>` <br>
 
-```aidl
+```sh    
 git restore --staged bug.js
 ```
 
@@ -638,11 +638,11 @@ now we realize the `5th` and `4th` commits was unnecessary or should've been in 
 We want to rollback to 3rd commit deleting 4th and 5th commit log history. <br>
 
 We'll run `git reset <commit-hash>`. Here `for 3rd commit (6ff6f3b)`:
-```aidl
+```sh    
 git reset 6ff6f3b
 ```
 or `git reset --hard <commit-hash>`
-```aidl
+```sh     
 git reset --hard 6ff6f3b
 ```
 `remember` `hard reset` will make the current directory just as the resetted commit <br>
@@ -652,7 +652,7 @@ But the `normal reset` won't take away the changes you've committed as the mista
 `What if we don't want to delete the git log history but jump into 3rd commit?` <br>
 Use `git revert <commit-hash-of-start-of-mistaken-commit`. <br>
 Here: `git revert 4thcommithash` which is `632889d`
-```aidl
+```sh    
 git revert 632889d
 ```
 `This will make a whole new commit of the 3rd commit and the 4th and 5th commit log won't be deleted`
@@ -667,7 +667,7 @@ So the `big question` is:
 
 # Github
 ### Github repo clone: 
-```aidl
+```sh    
 git clone <repo-url>
 ```
 `make sure there's no git initialized in the target folder using ` `git status`
@@ -696,11 +696,11 @@ any remotes yet, you won't see anything! <br>
 `1. Create a repository on Github` <br>
 
 `2. Initialize git in your local folder`     <br>
-```aidl
+```sh     
 git init
 ```
 `3. add your github repo link as remote to git` <br>
-```aidl
+```sh    
 git remote add <remote-name> <github-repo-link>
 ```
 eg: `git remote add origin http...` <br>
@@ -708,13 +708,13 @@ so when we write `origin`, means `that url named by origin will be hit`. <br>
 `So we can actually add multiple repo link as different remote names`
 
 `4. add some work, stage it and commit it`  <br> 
-```aidl
+```sh    
 touch something.txt
 git add something.txt
 git commit -m "first commit"
 ```
 `5. push work into github repo:` <br>
-```aidl
+```sh    
 git push <remote-name> <branch-name> 
 ```
 eg:`git push origin master`
@@ -731,24 +731,24 @@ setup for us is called origin`. You can change it. Most
 people leave it.
 
 ### Push Local Branch Data to Different Name Remote Branch:
-```aidl
+```sh     
 git push origin <local-branch-name>:<remote-branch-name>
 ```
 
 ### git remote name rename:
-```aidl
+```sh     
 git remote rename <old-name> <new-name>
 ``` 
 <br>
 
 ### git remote name remove:
-```aidl
+```sh    
 git remote remove <remote-name>
 ```
 <br>
 
 ### upstream:
-```aidl
+```sh    
 git push -u origin master
 git push origin
 ```
@@ -759,7 +759,7 @@ And git push will be enough to push anything after the mapping has been done.
 
 # Pulling & Fetching
 see all remote branches and local branches:
-```aidl
+```sh    
 git branch -r
 ```
 `remember:` <br>
@@ -785,7 +785,7 @@ now if I run `git branch -r`, I can see:
 now, let's say I run `git checkout origin/master`, I'll be taken back to master branch of the github. Which is 1 commit behind of my current master branch. 
 
 Now,
-```aidl
+```sh    
 git add --all
 git commit -m "something comitted"
 git push origin master
@@ -809,11 +809,11 @@ But if I run `git branch`, I see only:
 now I want a local copy of good branch. 
 For this use `git switch <remote-branch-name` or `git checkout --track origin/<remote-branch-name>`
 
-```aidl
+```sh    
 git switch food
 ```
 or
-```aidl
+```sh    
 git checkout --track origin/food
 ```
 This will automatically create a local copy of remote food branch and switch to it. 
@@ -834,11 +834,11 @@ Git fetching will retrieve the changes from the remote repository to local repos
 <br>
 
 Fetch:
-```aidl
+```sh    
 git fetch <remote>
 ```
 Fetch by <brach-name>:
-```aidl
+```sh     
 git fetch <remote> <branch-name>
 ```
 
@@ -849,7 +849,7 @@ Git fetching will retrieve the changes from the remote repository to local repos
 So `git pull = git fetch + git merge`
 
 git pull:
-```aidl
+```sh    
 git pull <remote> <branch-name>
 ```
 `git pull can result into merge conflicts`
