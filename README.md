@@ -17,7 +17,7 @@ You can view all of your settings and where they are coming from using:
 git config --list --show-origin
 ```
 ### For Global Setup
-```aidl
+```
 git config --global user.name 'your_username'
 ```
 ```aidl
